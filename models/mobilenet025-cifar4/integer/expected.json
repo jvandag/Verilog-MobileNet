@@ -1,0 +1,20 @@
+{
+  "integer_logits": [
+    [
+      -35,
+      -42,
+      -46,
+      -19
+    ]
+  ],
+  "class_ids": [
+    3
+  ],
+  "classes": [
+    "bird",
+    "cat",
+    "dog",
+    "horse"
+  ],
+  "model_sha256": "22620a406aaa14f9e0b21e45c1e60fcc2c8da9ddad1930b2399ab6166a2571d0"
+}

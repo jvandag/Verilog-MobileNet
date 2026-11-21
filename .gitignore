@@ -1,0 +1,10 @@
+.venv/
+.reference/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+*.log
+build/
+artifacts/
+data/
+.keras/

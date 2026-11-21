@@ -1,0 +1,37 @@
+{
+  "samples": 4000,
+  "classes": [
+    "bird",
+    "cat",
+    "dog",
+    "horse"
+  ],
+  "confusion_matrix_axes": "rows=true, columns=predicted",
+  "integer_accuracy": 0.8205,
+  "integer_confusion_matrix": [
+    [
+      895,
+      55,
+      30,
+      20
+    ],
+    [
+      78,
+      759,
+      134,
+      29
+    ],
+    [
+      38,
+      193,
+      738,
+      31
+    ],
+    [
+      24,
+      40,
+      46,
+      890
+    ]
+  ]
+}

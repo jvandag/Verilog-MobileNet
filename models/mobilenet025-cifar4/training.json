@@ -1,0 +1,61 @@
+{
+  "architecture": "MobileNetV1",
+  "alpha": 0.25,
+  "input_shape": [
+    64,
+    64,
+    3
+  ],
+  "source_native_shape": [
+    32,
+    32,
+    3
+  ],
+  "preprocessing": "PIL bilinear resize, float=pixel/127.5-1",
+  "pretrained_source": "ImageNet MobileNetV1 0.25, 128px, no top",
+  "pretrained_sha256": "7d8b7f3c9555cb4579f9659ee233a540e66fd7ad514c0a8b14493b667447c5d6",
+  "train_samples": 18000,
+  "validation_samples": 2000,
+  "seed": 42,
+  "tensorflow": "2.20.0",
+  "keras": "3.15.1",
+  "classes": [
+    "bird",
+    "cat",
+    "dog",
+    "horse"
+  ],
+  "parameters": 219572,
+  "phases": {
+    "head": {
+      "stop_reason": "epoch_limit",
+      "selection": "best_training_epoch",
+      "best_epoch": 5,
+      "training_batches_completed": 1410
+    },
+    "finetune": {
+      "stop_reason": "plateau",
+      "selection": "best_training_epoch",
+      "best_epoch": 18,
+      "training_batches_completed": 7332
+    }
+  },
+  "arguments": {
+    "command": "train",
+    "output": "artifacts/mobilenet025-cifar4",
+    "image_size": 64,
+    "head_epochs": 5,
+    "finetune_epochs": 40,
+    "head_lr": 0.001,
+    "finetune_lr": 3e-05,
+    "batch_size": 64,
+    "patience": 8,
+    "lr_patience": 3,
+    "seed": 42,
+    "calibration_samples": 256,
+    "train_limit": null,
+    "val_limit": null,
+    "random_init": false,
+    "evaluate_test": false
+  }
+}

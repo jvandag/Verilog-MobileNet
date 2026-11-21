@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "animal-cnn"
+version = "0.1.0"
+description = "Keras animal CNN and integer FPGA reference/export tools"
+requires-python = ">=3.11,<3.14"
+dependencies = ["numpy==2.2.6", "Pillow==12.0.0"]
+
+[project.optional-dependencies]
+train = ["tensorflow==2.20.0", "keras==3.15.1"]
+test = ["pytest==9.0.1"]
+runtime = ["tensorflow==2.20.0"]
+
+[project.scripts]
+animal-cnn = "animal_cnn.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["software"]
+
+[tool.pytest.ini_options]
+pythonpath = ["software"]
+testpaths = ["tests"]
