@@ -1,4 +1,4 @@
-# FPGA animal CNN
+# FPGA Animal CNN
 
 This repository supports one deployment profile: **MobileNetV1-0.25**, 64x64 RGB,
 with **int8 weights/activations and int32 biases/accumulators**. Class IDs are
