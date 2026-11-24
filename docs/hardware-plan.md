@@ -6,8 +6,17 @@ Implement the sole supported profile: **MobileNetV1-0.25, 64x64 RGB, four output
 (bird, cat, dog, horse), with int8 weights/activations, int32 biases/accumulators,
 and integer requantization. Preserve the supplied integer model and
 [numeric contract](numeric-contract.md). The measured software test accuracy is
-82.05%. There is no CNN RTL, synthesis utilization, timing result, or board test
-yet. This document specifies the work needed to produce them.
+82.05%. The fixed-profile RTL, compiler and image testbench are now implemented;
+see [RTL implementation](rtl-implementation.md) for the executable host contract
+and deviations from this original plan. The parent implementation report records
+measured synthesis, routed timing and board acceptance separately.
+
+The implemented weight policy is **immutable, initialized FPGA BRAM ROM**.
+Weights and biases are part of the bitstream; MODEL_VALID is set after reset
+and software uploads only images. PARAM_ADDR/PARAM_DATA provide readback;
+PARAM_DATA writes are rejected. This supersedes the runtime parameter-loading
+and commit proposals below. Retraining requires regenerating ROM initialization
+and rebuilding the bitstream.
 
 The graph and payload are documented in [mobilenet.md](mobilenet.md). Pin the
 release hashes there before implementation. Retraining the same architecture

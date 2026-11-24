@@ -52,6 +52,7 @@ The [software development summary](docs/software-development-summary.md)
 records the requests and decisions from this chat that led to the current model.
 
 The intended parent is [ECE544_Final_Project](https://github.com/CaseyRasor/ECE544_Final_Project).
-**SystemVerilog CNN RTL is not implemented yet.** The hardware plan targets its
-100 MHz Wishbone bus and Nexys A7-100T. FPGA utilization numbers are planning
-estimates until synthesis and integration establish the actual fit.
+**SystemVerilog CNN RTL is in `rtl/`.** See [implementation and image tests](docs/rtl-implementation.md).
+The hardware plan targets its 100 MHz Wishbone bus and Nexys A7-100T.
+Measured utilization, routed timing and board results are recorded in the
+parent repository's `docs/cnn-implementation.md` and `docs/validation/cnn/`.
